@@ -7,18 +7,18 @@ using Store.Models.Products;
 
 namespace Store.Logic.Impl
 {
-    public class ProductService : CrudAppService<Product, ProductDto, GetAllProductsInput, CreateProductDto, ProductDto>, IProductService
+    public class ProductService : CrudAppService<Product, ProductDto, CreateProductDto, ProductDto>, IProductService
     {
         private readonly IProductRepository _productRepository;
 
-        public ProductService(IProductRepository repository, IMapper mapper) : base(repository, mapper)
+        public ProductService(IProductRepository repository) : base(repository)
         {
             _productRepository = repository;
         }
 
         public IEnumerable<ProductDto> GetAllActive(GetActiveProductInput input)
         {
-            var allActiveProducts = Repository.GetRange(input.SkipCount, input.MaxResultCount, product => product.IsAvailable);
+            var allActiveProducts = _productRepository.GetRange(input.SkipCount, input.MaxResultCount, product => product.IsAvailable);
             var result = Mapper.Map<IEnumerable<ProductDto>>(allActiveProducts);
             return result;
         }

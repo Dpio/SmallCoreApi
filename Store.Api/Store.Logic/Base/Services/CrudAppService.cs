@@ -5,53 +5,54 @@ using Store.Models.Base;
 
 namespace Store.Logic.Base.Services
 {
-    public abstract class CrudAppService<TEntity, TEntityDto, TGetAllInput, TCreateInput, TUpdateInput>
-        : CrudServiceBase<TEntity, TEntityDto, TCreateInput, TUpdateInput>,
-            ICrudAppService<TEntityDto, TCreateInput, TUpdateInput>
+    public abstract class CrudAppService<TEntity, TEntityDto, TCreateInput, TUpdateInput>
+        : ICrudAppService<TEntityDto, TCreateInput, TUpdateInput>
         where TEntity : class, IEntity
         where TEntityDto : IEntityDto
         where TUpdateInput : IEntityDto
     {
-        protected CrudAppService(IGenericRepository<TEntity> repository, IMapper mapper)
-            : base(repository, mapper)
+        private IGenericRepository<TEntity> _repository;
+
+        protected CrudAppService(IGenericRepository<TEntity> repository)
         {
+            _repository = repository;
         }
 
         public virtual TEntityDto Get(int id)
         {
             var entity = GetEntityById(id);
-            return MapToEntityDto(entity);
+            return Mapper.Map<TEntityDto>(entity);
         }
 
         public virtual TEntityDto Create(TCreateInput input)
         {
-            var entity = MapToEntity(input);
+            var entity = Mapper.Map<TEntity>(input);
 
-            Repository.Add(entity);
-            Repository.SaveChanges();
+            _repository.Add(entity);
+            _repository.SaveChanges();
 
-            return MapToEntityDto(entity);
+            return Mapper.Map<TEntityDto>(entity);
         }
 
         public virtual TEntityDto Update(TUpdateInput input)
         {
             var entity = GetEntityById(input.Id);
 
-            MapToEntity(input, entity);
-            Repository.SaveChanges();
+            Mapper.Map(input, entity);
+            _repository.SaveChanges();
 
-            return MapToEntityDto(entity);
+            return Mapper.Map<TEntityDto>(entity);
         }
 
         public virtual void Delete(int id)
         {
-            Repository.Remove(id);
-            Repository.SaveChanges();
+            _repository.Remove(id);
+            _repository.SaveChanges();
         }
 
         protected virtual TEntity GetEntityById(int id)
         {
-            return Repository.Get(id);
+            return _repository.Get(id);
         }
     }
 }

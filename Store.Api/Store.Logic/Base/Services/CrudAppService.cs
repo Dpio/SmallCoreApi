@@ -11,10 +11,12 @@ namespace Store.Logic.Base.Services
         where TEntityDto : IEntityDto
         where TUpdateInput : IEntityDto
     {
-        private IGenericRepository<TEntity> _repository;
+        private readonly IGenericRepository<TEntity> _repository;
+        protected readonly IMapper Mapper;
 
-        protected CrudAppService(IGenericRepository<TEntity> repository)
+        protected CrudAppService(IGenericRepository<TEntity> repository, IMapper mapper)
         {
+            Mapper = mapper;
             _repository = repository;
         }
 

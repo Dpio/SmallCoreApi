@@ -11,7 +11,7 @@ namespace Store.Logic.Impl
     {
         private readonly IProductRepository _productRepository;
 
-        public ProductService(IProductRepository repository) : base(repository)
+        public ProductService(IProductRepository repository, IMapper mapper) : base(repository, mapper)
         {
             _productRepository = repository;
         }

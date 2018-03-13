@@ -27,7 +27,7 @@ namespace Store.Api
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "SIENN Recruitment API"
+                    Title = "API"
                 });
             });
 
@@ -56,7 +56,7 @@ namespace Store.Api
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "SIENN Recruitment API v1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
             });
 
             app.UseMvc();

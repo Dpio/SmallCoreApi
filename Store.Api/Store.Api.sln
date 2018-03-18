@@ -5,19 +5,19 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Api", "Store.Api\Store.Api.csproj", "{A47F6131-F5A2-418A-9609-37F39CBCF688}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Models", "Store.Models\Store.Models.csproj", "{CA397188-54C5-4431-89DE-7257244CC173}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Models", "Store.Models\Store.Models.csproj", "{CA397188-54C5-4431-89DE-7257244CC173}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Logic", "Store.Logic\Store.Logic.csproj", "{E187A97B-39BE-4350-A6A0-1F271D5A56E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Logic", "Store.Logic\Store.Logic.csproj", "{E187A97B-39BE-4350-A6A0-1F271D5A56E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.DataAccess", "Store.DataAccess\Store.DataAccess.csproj", "{6E737AE5-00AF-4ADE-8A19-559F6E9D8387}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.DataAccess", "Store.DataAccess\Store.DataAccess.csproj", "{6E737AE5-00AF-4ADE-8A19-559F6E9D8387}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{75D1CF66-75E7-4CA6-88E3-4FE57F69004C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CA0D2096-73B9-4E5A-8449-DA34E4F4DBFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Tests", "Store.Tests\Store.Tests.csproj", "{DD28F48B-0AD3-4D55-A5E1-518632AD0DE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Tests", "Store.Tests\Store.Tests.csproj", "{DD28F48B-0AD3-4D55-A5E1-518632AD0DE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Common", "Store.Common\Store.Common.csproj", "{CDD42F8B-31BC-49F0-9D50-A252AF9D4ED0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.Common", "Store.Common\Store.Common.csproj", "{CDD42F8B-31BC-49F0-9D50-A252AF9D4ED0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

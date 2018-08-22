@@ -322,3 +322,5 @@ ASALocalRun/
 
 # NVidia Nsight GPU debugger configuration file
 *.nvuser
+Store.Ui/my-store/.vscode/
+Store.Ui/my-store/package-lock.json

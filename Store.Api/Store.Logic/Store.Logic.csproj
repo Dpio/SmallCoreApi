@@ -1,18 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Store.DataAccess\Store.DataAccess.csproj" />
     <ProjectReference Include="..\Store.Models\Store.Models.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="AutoMapper">
-      <HintPath>..\..\..\..\..\adm\.nuget\packages\automapper\6.2.2\lib\netstandard1.3\AutoMapper.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
